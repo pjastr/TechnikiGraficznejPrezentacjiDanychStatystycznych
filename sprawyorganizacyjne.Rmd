@@ -1,0 +1,72 @@
+---
+title: "Dzień 1 - Sprawy organizacyne"
+header-includes:
+  - \usepackage[polish]{babel}
+output:
+  html_document:
+    toc: true
+    toc_depth: 5
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+  pdf_document:
+    toc: yes
+    toc_depth: '5'
+---
+<style type="text/css">
+.title {
+  display: none;
+}
+
+.table {
+    width:70%;
+}
+
+#getting-started img {
+  margin-right: 10px;
+}
+
+</style>
+
+[Wersja pdf](sprawyorganizacyjne.pdf)
+
+# Sprawy organizacyjne
+
+* Sylabus dostępny na stronie studiów podyplomowych WMII - [link](http://wmii.uwm.edu.pl/psi/sites/default/files/styles/03_techniki_graficznej_prezentacji_danych.pdf)
+* Liczba godzin: 8 godz. (ćwiczenia).
+* Liczba punktów ECTS: 1.
+* Forma zaliczenia: zaliczenie na ocenę.
+* Konsultacje stacjonarne: środa 11:00-12:30, p. A2/14 (Słoneczna 54).
+* Konsultacje online: maile są na stronie www. 
+
+## Treści zajęć
+
+Ćwiczenia:
+
+* Metody prezentacji danych statystycznych
+* Zalety i ograniczenia rozmaitych technik prezentacji
+* Istota i cel tworzenia raportów
+* Techniki prezentacji danych jednowymiarowych
+* Techniki prezentacji danych wielowymiarowych
+
+
+## Forma i warunki weryfikacji efektów
+
+Ćwiczenia: 
+
+* mini-projekt, 
+* aktywność na zajęciach
+
+
+## Literatura
+
+* Walesiak M., Gatnar E., Statystyczna analiza danych z wykorzystaniem programu R, PWN, Warszawa, 2009.
+* Wasilewska E., Statystyka opisowa od podstaw, Podręcznik z zadaniami, Wydawnictwo SGGW, Warszawa, 2009.
+* Larose Daniel T., Metody i modele eksploracji danych, PWN, Warszawa, 2008.
+* P. Biecek, Przewodnik po pakiecie R, Oficyna Wydawnicza GiS, 2017.
+
+
+
+
+</div>
+

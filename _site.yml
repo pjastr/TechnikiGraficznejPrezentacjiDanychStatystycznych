@@ -9,5 +9,9 @@ navbar:
       menu:
         - text: "Sprawy organizacyjne"
           href: sprawyorganizacyjne.html
+        - text: "Bazowa grafika"
+          href: bazowagrafika.html
+        - text: "ggplot2"
+          href: ggplot2.html
 
 
