@@ -55,7 +55,7 @@ output:
 Ćwiczenia: 
 
 * mini-projekt, 
-* aktywność na zajęciach
+* aktywność na zajęciach.
 
 
 ## Literatura
