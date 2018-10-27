@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Dzień 1 - Bazowa grafika</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3,h4,h5",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = false;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Techniki graficznej prezentacji danych statystycznych</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Strona główna</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Dzień 1
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="sprawyorganizacyjne.html">Sprawy organizacyjne</a>
+    </li>
+    <li>
+      <a href="bazowagrafika.html">Bazowa grafika</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Dzień 1 - Bazowa grafika</h1>
+
+</div>
+
+
+<style type="text/css">
+.title {
+  display: none;
+}
+
+.table {
+    width:70%;
+}
+
+#getting-started img {
+  margin-right: 10px;
+}
+
+</style>
+<p><a href="bazowagrafika.pdf">Wersja pdf</a></p>
+<div id="bazowa-grafika" class="section level1">
+<h1>Bazowa grafika</h1>
+<div id="wykres---plot" class="section level2">
+<h2>Wykres - plot</h2>
+<p>Funkcja <code>plot</code> w podstawowej wersji służy do generowania/rysowania wykresów.</p>
+<p>Opis w dokumentacji - <a href="https://www.rdocumentation.org/packages/graphics/versions/3.5.1/topics/plot">link</a></p>
+<p>Ściągawka - <a href="http://www.gastonsanchez.com/visually-enforced/resources/2015/09/22/R-cheat-sheet-graphical-parameters/">link</a></p>
+<pre class="r"><code>wzrost &lt;- c(145, 167, 178, 124, 150)
+waga &lt;- c(51, 68, 64, 43, 57)
+
+plot(wzrost,waga)</code></pre>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p><em>Ćwiczenie:</em> potestuj różne typy zaznaczania danych.</p>
+<pre class="r"><code>plot(wzrost,waga, type = &quot;l&quot;)</code></pre>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>Ważne jest uporządkowanie danych.</p>
+<pre class="r"><code>wzrost &lt;- c(124, 145, 150, 167, 178)
+waga &lt;- c(43, 51, 57, 68, 64)
+
+plot(wzrost,waga,type = &quot;l&quot;)</code></pre>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Jeśli chcemy narysować wykres funkcji, to najpierw musi stworzyć wektor argumentów (odciętych).</p>
+<pre class="r"><code>x &lt;- seq(-2*pi,2*pi,0.1)
+plot(x, sin(x))</code></pre>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Przykład użycia różnych parametrów:</p>
+<pre class="r"><code>plot(x, sin(x), main=&quot;Wykres sinus- tytuł&quot;,sub=&quot;a tu jakiś podtytuł&quot;,xlab=&quot;tu mamy x&quot;,ylab=&quot;tu mamy sinus&quot;,type=&quot;l&quot;,col=&quot;blue&quot;)</code></pre>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>Lista wbudowanych kolorów to funkcja <code>colors()</code>. Użycie kolorów w systemie hex możliwe jest poprzez <code>#AA4371</code>. Jeśli mamy wartość rgp, możemy ją zmienić na poprzez polecenie <code>rgb</code>.</p>
+<pre class="r"><code>plot(x, sin(x), col=&quot;#AA4371&quot;)</code></pre>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<pre class="r"><code>plot(x, sin(x), col=rgb(34,22,25,max=255))</code></pre>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<div id="plot---cwiczenia" class="section level3">
+<h3>Plot - ćwiczenia</h3>
+<ol style="list-style-type: decimal">
+<li>Narysuj wykresy przykładowych funkcji, dopisz osie. Poćwicz różne kombinacje.</li>
+<li>Zrób wykres wybierając dwie kolumny ze zbioru <code>mtcars</code>.</li>
+</ol>
+</div>
+</div>
+<div id="plot-a-tabela." class="section level2">
+<h2>Plot a tabela.</h2>
+<p>Jeśli użyjemy <code>plot</code> na tabeli (w której mamy szereg rozdzielczy), to otrzymamy nieco inny wykres.</p>
+<pre class="r"><code>plot(table(mtcars$cyl))</code></pre>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><em>Ćwiczenie:</em> poćwicz różne parametry do funkcji.</p>
+</div>
+<div id="modyfikacja-tytuu" class="section level2">
+<h2>Modyfikacja tytułu</h2>
+<p>Dodatkowo gdy potrzeba nam bardziej rozbudowanych podpisów możemy użyć funkcji <code>title</code> - <a href="https://www.rdocumentation.org/packages/graphics/versions/3.5.1/topics/title">link</a>. Parametry graficzne są opisane <a href="https://www.rdocumentation.org/packages/graphics/versions/3.5.1/topics/par">tutaj</a>.</p>
+<p>Przykładowe użycia:</p>
+<pre class="r"><code>cars &lt;- c(1, 3, 6, 4, 9)
+plot(cars, type=&quot;o&quot;, col=&quot;blue&quot;)
+title(main=&quot;Samochody&quot;, col.main=&quot;red&quot;, font.main=3)</code></pre>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>Parametry do czcionek: 1=plain, 2=bold, 3=italic, 4=bold italic, 5=symbol.</p>
+<pre class="r"><code>cars &lt;- c(1, 3, 6, 4, 9)
+plot(cars, type=&quot;o&quot;, col=&quot;blue&quot;)
+title(xlab=&quot;Indeksy&quot;, col.lab=&quot;red&quot;)</code></pre>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p>Poprawka:</p>
+<pre class="r"><code>cars &lt;- c(1, 3, 6, 4, 9)
+plot(cars, type=&quot;o&quot;, col=&quot;blue&quot;, xlab=&quot;&quot;)
+title(xlab=&quot;Indeksy&quot;, col.lab=&quot;red&quot;)</code></pre>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<pre class="r"><code>a&lt;-c(1,2,3,4,5,6,7)
+b&lt;-c(23,3,2,4,5,2,-2)
+plot(a,b,main=&quot;Wykres&quot;,axes=FALSE,type=&quot;o&quot;,col=&quot;blue&quot;,ann=FALSE)
+axis(2, las=1, at=10*0:range(b)[2])
+axis(1, at=1:7, lab=c(&quot;Pn&quot;,&quot;Wt&quot;,&quot;Śr&quot;,&quot;Czw&quot;,&quot;Pt&quot;,&quot;So&quot;,&quot;Nd&quot;))
+box()</code></pre>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<div id="tytu---cwiczenia" class="section level3">
+<h3>Tytuł - ćwiczenia</h3>
+<ol style="list-style-type: decimal">
+<li>Poćwicz samodzielnie różne kombinacje.</li>
+<li>Spróbuj odwzorować w kodzie poniższy wykres.</li>
+</ol>
+<div class="figure">
+<img src="w1.png" alt="w1" />
+<p class="caption">w1</p>
+</div>
+</div>
+</div>
+<div id="dodatkowe-linie" class="section level2">
+<h2>Dodatkowe linie</h2>
+<p>Aby dorysować linię, mamy funkcję `lines’ - <a href="https://www.rdocumentation.org/packages/graphics/versions/3.5.1/topics/lines">link</a>.</p>
+<pre class="r"><code>x &lt;- seq(-2*pi,2*pi,0.1)
+plot(x, sin(x), type=&quot;l&quot;)
+lines(x,cos(x), type=&quot;o&quot;, pch=22, lty=2,col=&quot;red&quot;)</code></pre>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>Możemy rysować więcej linii:</p>
+<pre class="r"><code>x &lt;- seq(-2*pi,2*pi,0.1)
+plot(x, sin(x), type=&quot;l&quot;)
+lines(x,cos(x), type=&quot;o&quot;, pch=22, lty=2,col=&quot;red&quot;)
+lines(x,rep(-0.5,length(x)), type=&quot;l&quot;, col=&quot;blue&quot;)</code></pre>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<div id="legenda" class="section level3">
+<h3>Legenda</h3>
+<p>Kolejnym elementem do umieszczenia jest legenda. Używamy funkcji <code>legend</code> - <a href="https://www.rdocumentation.org/packages/graphics/versions/3.5.1/topics/legend">link</a>.</p>
+<pre class="r"><code>plot(x, sin(x),ylab=&quot;&quot;,type=&quot;l&quot;,col=&quot;blue&quot;)
+lines(x,cos(x), col=&quot;red&quot;)
+legend(&quot;topleft&quot;,c(&quot;sin(x)&quot;,&quot;cos(x)&quot;),fill=c(&quot;blue&quot;,&quot;red&quot;))</code></pre>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+</div>
+<div id="przykad-praktyczny" class="section level3">
+<h3>Przykład praktyczny</h3>
+<pre class="r"><code>data(iris)
+head(iris)</code></pre>
+<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa</code></pre>
+<pre class="r"><code>plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species)</code></pre>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<pre class="r"><code>plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species, pch = 15)</code></pre>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<pre class="r"><code>plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species, pch = &quot;A&quot;)</code></pre>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<pre class="r"><code>plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species, pch = 21, bg = &quot;blue&quot;)</code></pre>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<pre class="r"><code>plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species, pch = 16)</code></pre>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<pre class="r"><code>plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species, pch = 16, cex = 2)</code></pre>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<pre class="r"><code>levels(iris$Species)</code></pre>
+<pre><code>## [1] &quot;setosa&quot;     &quot;versicolor&quot; &quot;virginica&quot;</code></pre>
+<pre class="r"><code>plot(iris$Sepal.Length, iris$Petal.Length,
+     col = iris$Species,
+     pch = 16,
+     cex = 2)
+legend(x = 4.5, y = 7, legend = levels(iris$Species), col = c(1:3), pch = 16)</code></pre>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+</div>
+</div>
+<div id="wykres-supkowy---bar-chart" class="section level2">
+<h2>Wykres słupkowy - bar chart</h2>
+<pre class="r"><code>urlopy&lt;- c(23,3,4,15,8)
+barplot(urlopy)</code></pre>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<pre class="r"><code>barplot(urlopy, main=&quot;Urlopy&quot;, xlab=&quot;Miesiące&quot;,  
+   ylab=&quot;Łącznie&quot;, names.arg=c(&quot;Sty&quot;,&quot;Lut&quot;,&quot;Mar&quot;,&quot;Kwi&quot;,&quot;Maj&quot;), 
+   border=&quot;pink&quot;, density=c(10,40,30,20,50))</code></pre>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-24-2.png" width="672" /></p>
+<pre class="r"><code>urlopy&lt;- matrix( c(2, 4, 8, 1,4, 5, 7,11,3,24,12,9), nrow=3, ncol=4)
+barplot(urlopy, main=&quot;Urlopy&quot;, ylab= &quot;Razem&quot;,
+   beside=TRUE, col=rainbow(5))
+legend(&quot;topleft&quot;, c(&quot;1Q&quot;,&quot;2Q&quot;,&quot;3Q&quot;,&quot;4Q&quot;), cex=0.6, 
+   bty=&quot;n&quot;, fill=rainbow(5));</code></pre>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-24-3.png" width="672" /></p>
+<pre class="r"><code>barplot(t(urlopy), main=&quot;Urlopy&quot;, ylab=&quot;Razem&quot;, 
+   col=heat.colors(3), space=0.1, cex.axis=0.8, las=1,
+   names.arg=c(&quot;A&quot;,&quot;B&quot;,&quot;C&quot;), cex=0.8)
+legend(&quot;top&quot;, c(&quot;1Q&quot;,&quot;2Q&quot;,&quot;3Q&quot;,&quot;4Q&quot;), cex=0.8, fill=heat.colors(3));</code></pre>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-24-4.png" width="672" /></p>
+</div>
+<div id="histogram" class="section level2">
+<h2>Histogram</h2>
+<pre class="r"><code>urlopy&lt;- c(23,3,4,15,8)
+hist(urlopy)</code></pre>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+</div>
+<div id="wykres-koowy---pie-chart" class="section level2">
+<h2>Wykres kołowy - pie chart</h2>
+<pre class="r"><code>urlopy&lt;- c(23,3,4,15,8)
+pie(urlopy)</code></pre>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<pre class="r"><code>pie(urlopy, main=&quot;urlopy&quot;, col=rainbow(length(urlopy)),
+   labels=c(&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;,&quot;E&quot;))</code></pre>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-26-2.png" width="672" /></p>
+</div>
+<div id="dotchat---wykres-kropkowy" class="section level2">
+<h2>Dotchat - wykres kropkowy</h2>
+<pre class="r"><code>urlopy&lt;- c(23,3,4,15,8)
+dotchart(urlopy)</code></pre>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+</div>
+<div id="pary-wykresow---pairs" class="section level2">
+<h2>Pary wykresów - pairs</h2>
+<pre class="r"><code>pairs(iris)</code></pre>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+</div>
+<div id="mapy" class="section level2">
+<h2>Mapy</h2>
+<pre class="r"><code>library(sp)
+gadm &lt;- readRDS(&quot;gadm36_POL_1_sp.rds&quot;)
+plot(gadm)</code></pre>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<pre class="r"><code>myColours &lt;- rep(&quot;forestgreen&quot;, 16)
+myColours[5] &lt;- &quot;red&quot;
+plot(gadm, col = myColours, border = &#39;grey&#39;)</code></pre>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-29-2.png" width="672" /></p>
+Plik do zapisania w katalogu roboczym ze strony <a href="https://biogeo.ucdavis.edu/data/gadm3.6/Rsp/gadm36_POL_1_sp.rds" class="uri">https://biogeo.ucdavis.edu/data/gadm3.6/Rsp/gadm36_POL_1_sp.rds</a>
+</div>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

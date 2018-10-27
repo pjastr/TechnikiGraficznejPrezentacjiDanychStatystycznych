@@ -64,6 +64,8 @@ output:
 * Wasilewska E., Statystyka opisowa od podstaw, Podręcznik z zadaniami, Wydawnictwo SGGW, Warszawa, 2009.
 * Larose Daniel T., Metody i modele eksploracji danych, PWN, Warszawa, 2008.
 * P. Biecek, Przewodnik po pakiecie R, Oficyna Wydawnicza GiS, 2017.
+* https://rstudio-pubs-static.s3.amazonaws.com/7953_4e3efd5b9415444ca065b1167862c349.html
+* https://www.harding.edu/fmccown/r/
 
 
 
