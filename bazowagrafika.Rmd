@@ -156,6 +156,15 @@ lines(x,cos(x), type="o", pch=22, lty=2,col="red")
 lines(x,rep(-0.5,length(x)), type="l", col="blue")
 ```
 
+### Dodatkowe punkty i teksty
+
+```{r}
+plot(1, 1, xlim=c(1,5.5), ylim=c(0,7), type="n", ann=FALSE)
+text(1:5, rep(6,5), labels=c(0:4), cex=1:5, col=1:5)
+points(1:5, rep(5,5), cex=1:5, col=1:5, pch=0:4)
+```
+
+
 ### Legenda
 
 Kolejnym elementem do umieszczenia jest legenda. Używamy funkcji `legend` - [link](https://www.rdocumentation.org/packages/graphics/versions/3.5.1/topics/legend).

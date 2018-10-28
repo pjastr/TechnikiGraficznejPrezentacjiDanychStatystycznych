@@ -6,11 +6,12 @@
 \contentsline {subsection}{Modyfikacja tytu\IeC {\l }u}{9}{section*.6}
 \contentsline {subsubsection}{Tytu\IeC {\l } - \IeC {\'c}wiczenia}{13}{section*.7}
 \contentsline {subsection}{Dodatkowe linie}{14}{section*.8}
-\contentsline {subsubsection}{Legenda}{15}{section*.9}
-\contentsline {subsubsection}{Przyk\IeC {\l }ad praktyczny}{16}{section*.10}
-\contentsline {subsection}{Wykres s\IeC {\l }upkowy - bar chart}{23}{section*.11}
-\contentsline {subsection}{Histogram}{27}{section*.12}
-\contentsline {subsection}{Wykres ko\IeC {\l }owy - pie chart}{28}{section*.13}
-\contentsline {subsection}{Dotchat - wykres kropkowy}{30}{section*.14}
-\contentsline {subsection}{Pary wykres\IeC {\'o}w - pairs}{31}{section*.15}
-\contentsline {subsection}{Mapy}{32}{section*.16}
+\contentsline {subsubsection}{Dodatkowe punkty i teksty}{15}{section*.9}
+\contentsline {subsubsection}{Legenda}{16}{section*.10}
+\contentsline {subsubsection}{Przyk\IeC {\l }ad praktyczny}{17}{section*.11}
+\contentsline {subsection}{Wykres s\IeC {\l }upkowy - bar chart}{24}{section*.12}
+\contentsline {subsection}{Histogram}{28}{section*.13}
+\contentsline {subsection}{Wykres ko\IeC {\l }owy - pie chart}{29}{section*.14}
+\contentsline {subsection}{Dotchat - wykres kropkowy}{31}{section*.15}
+\contentsline {subsection}{Pary wykres\IeC {\'o}w - pairs}{32}{section*.16}
+\contentsline {subsection}{Mapy}{33}{section*.17}

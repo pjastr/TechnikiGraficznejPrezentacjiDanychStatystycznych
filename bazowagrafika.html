@@ -432,13 +432,20 @@ plot(x, sin(x), type=&quot;l&quot;)
 lines(x,cos(x), type=&quot;o&quot;, pch=22, lty=2,col=&quot;red&quot;)
 lines(x,rep(-0.5,length(x)), type=&quot;l&quot;, col=&quot;blue&quot;)</code></pre>
 <p><img src="bazowagrafika_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<div id="dodatkowe-punkty-i-teksty" class="section level3">
+<h3>Dodatkowe punkty i teksty</h3>
+<pre class="r"><code>plot(1, 1, xlim=c(1,5.5), ylim=c(0,7), type=&quot;n&quot;, ann=FALSE)
+text(1:5, rep(6,5), labels=c(0:4), cex=1:5, col=1:5)
+points(1:5, rep(5,5), cex=1:5, col=1:5, pch=0:4)</code></pre>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+</div>
 <div id="legenda" class="section level3">
 <h3>Legenda</h3>
 <p>Kolejnym elementem do umieszczenia jest legenda. Używamy funkcji <code>legend</code> - <a href="https://www.rdocumentation.org/packages/graphics/versions/3.5.1/topics/legend">link</a>.</p>
 <pre class="r"><code>plot(x, sin(x),ylab=&quot;&quot;,type=&quot;l&quot;,col=&quot;blue&quot;)
 lines(x,cos(x), col=&quot;red&quot;)
 legend(&quot;topleft&quot;,c(&quot;sin(x)&quot;,&quot;cos(x)&quot;),fill=c(&quot;blue&quot;,&quot;red&quot;))</code></pre>
-<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 </div>
 <div id="przykad-praktyczny" class="section level3">
 <h3>Przykład praktyczny</h3>
@@ -452,17 +459,17 @@ head(iris)</code></pre>
 ## 5          5.0         3.6          1.4         0.2  setosa
 ## 6          5.4         3.9          1.7         0.4  setosa</code></pre>
 <pre class="r"><code>plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species)</code></pre>
-<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
-<pre class="r"><code>plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species, pch = 15)</code></pre>
 <p><img src="bazowagrafika_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
-<pre class="r"><code>plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species, pch = &quot;A&quot;)</code></pre>
+<pre class="r"><code>plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species, pch = 15)</code></pre>
 <p><img src="bazowagrafika_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
-<pre class="r"><code>plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species, pch = 21, bg = &quot;blue&quot;)</code></pre>
+<pre class="r"><code>plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species, pch = &quot;A&quot;)</code></pre>
 <p><img src="bazowagrafika_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
-<pre class="r"><code>plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species, pch = 16)</code></pre>
+<pre class="r"><code>plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species, pch = 21, bg = &quot;blue&quot;)</code></pre>
 <p><img src="bazowagrafika_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
-<pre class="r"><code>plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species, pch = 16, cex = 2)</code></pre>
+<pre class="r"><code>plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species, pch = 16)</code></pre>
 <p><img src="bazowagrafika_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<pre class="r"><code>plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species, pch = 16, cex = 2)</code></pre>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
 <pre class="r"><code>levels(iris$Species)</code></pre>
 <pre><code>## [1] &quot;setosa&quot;     &quot;versicolor&quot; &quot;virginica&quot;</code></pre>
 <pre class="r"><code>plot(iris$Sepal.Length, iris$Petal.Length,
@@ -470,66 +477,66 @@ head(iris)</code></pre>
      pch = 16,
      cex = 2)
 legend(x = 4.5, y = 7, legend = levels(iris$Species), col = c(1:3), pch = 16)</code></pre>
-<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
 </div>
 </div>
 <div id="wykres-supkowy---bar-chart" class="section level2">
 <h2>Wykres słupkowy - bar chart</h2>
 <pre class="r"><code>urlopy&lt;- c(23,3,4,15,8)
 barplot(urlopy)</code></pre>
-<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
 <pre class="r"><code>barplot(urlopy, main=&quot;Urlopy&quot;, xlab=&quot;Miesiące&quot;,  
    ylab=&quot;Łącznie&quot;, names.arg=c(&quot;Sty&quot;,&quot;Lut&quot;,&quot;Mar&quot;,&quot;Kwi&quot;,&quot;Maj&quot;), 
    border=&quot;pink&quot;, density=c(10,40,30,20,50))</code></pre>
-<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-24-2.png" width="672" /></p>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-25-2.png" width="672" /></p>
 <pre class="r"><code>urlopy&lt;- matrix( c(2, 4, 8, 1,4, 5, 7,11,3,24,12,9), nrow=3, ncol=4)
 barplot(urlopy, main=&quot;Urlopy&quot;, ylab= &quot;Razem&quot;,
    beside=TRUE, col=rainbow(5))
 legend(&quot;topleft&quot;, c(&quot;1Q&quot;,&quot;2Q&quot;,&quot;3Q&quot;,&quot;4Q&quot;), cex=0.6, 
    bty=&quot;n&quot;, fill=rainbow(5));</code></pre>
-<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-24-3.png" width="672" /></p>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-25-3.png" width="672" /></p>
 <pre class="r"><code>barplot(t(urlopy), main=&quot;Urlopy&quot;, ylab=&quot;Razem&quot;, 
    col=heat.colors(3), space=0.1, cex.axis=0.8, las=1,
    names.arg=c(&quot;A&quot;,&quot;B&quot;,&quot;C&quot;), cex=0.8)
 legend(&quot;top&quot;, c(&quot;1Q&quot;,&quot;2Q&quot;,&quot;3Q&quot;,&quot;4Q&quot;), cex=0.8, fill=heat.colors(3));</code></pre>
-<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-24-4.png" width="672" /></p>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-25-4.png" width="672" /></p>
 </div>
 <div id="histogram" class="section level2">
 <h2>Histogram</h2>
 <pre class="r"><code>urlopy&lt;- c(23,3,4,15,8)
 hist(urlopy)</code></pre>
-<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
 </div>
 <div id="wykres-koowy---pie-chart" class="section level2">
 <h2>Wykres kołowy - pie chart</h2>
 <pre class="r"><code>urlopy&lt;- c(23,3,4,15,8)
 pie(urlopy)</code></pre>
-<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
 <pre class="r"><code>pie(urlopy, main=&quot;urlopy&quot;, col=rainbow(length(urlopy)),
    labels=c(&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;,&quot;E&quot;))</code></pre>
-<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-26-2.png" width="672" /></p>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-27-2.png" width="672" /></p>
 </div>
 <div id="dotchat---wykres-kropkowy" class="section level2">
 <h2>Dotchat - wykres kropkowy</h2>
 <pre class="r"><code>urlopy&lt;- c(23,3,4,15,8)
 dotchart(urlopy)</code></pre>
-<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
 </div>
 <div id="pary-wykresow---pairs" class="section level2">
 <h2>Pary wykresów - pairs</h2>
 <pre class="r"><code>pairs(iris)</code></pre>
-<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
 </div>
 <div id="mapy" class="section level2">
 <h2>Mapy</h2>
 <pre class="r"><code>library(sp)
 gadm &lt;- readRDS(&quot;gadm36_POL_1_sp.rds&quot;)
 plot(gadm)</code></pre>
-<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
 <pre class="r"><code>myColours &lt;- rep(&quot;forestgreen&quot;, 16)
 myColours[5] &lt;- &quot;red&quot;
 plot(gadm, col = myColours, border = &#39;grey&#39;)</code></pre>
-<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-29-2.png" width="672" /></p>
+<p><img src="bazowagrafika_files/figure-html/unnamed-chunk-30-2.png" width="672" /></p>
 Plik do zapisania w katalogu roboczym ze strony <a href="https://biogeo.ucdavis.edu/data/gadm3.6/Rsp/gadm36_POL_1_sp.rds" class="uri">https://biogeo.ucdavis.edu/data/gadm3.6/Rsp/gadm36_POL_1_sp.rds</a>
 </div>
 </div>
