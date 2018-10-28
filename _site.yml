@@ -11,5 +11,7 @@ navbar:
           href: sprawyorganizacyjne.html
         - text: "Bazowa grafika"
           href: bazowagrafika.html
+    - text: "Propozycje"
+      href: propozycje.html
 
 
