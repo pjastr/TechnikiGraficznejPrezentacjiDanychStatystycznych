@@ -28,9 +28,11 @@ output:
 
 </style>
 
-[Wersja pdf](bazowagrafika.pdf)
+
 
 # Bazowa grafika
+
+[Wersja pdf](bazowagrafika.pdf)
 
 ## Wykres - plot
 
@@ -74,7 +76,7 @@ plot(x, sin(x), main="Wykres sinus- tytuł",sub="a tu jakiś podtytuł",xlab="tu
 
 Lista wbudowanych kolorów to funkcja `colors()`.
 Użycie kolorów w systemie hex możliwe jest poprzez `#AA4371`.
-Jeśli mamy wartość rgp, możemy ją zmienić na poprzez polecenie `rgb`.
+Jeśli mamy wartość rgb, możemy ją zmienić na poprzez polecenie `rgb`.
 ```{r}
 plot(x, sin(x), col="#AA4371")
 ```
@@ -136,7 +138,7 @@ box()
 1. Poćwicz samodzielnie różne kombinacje.
 2. Spróbuj odwzorować w kodzie poniższy wykres.
 
-![w1](w1.png)
+![](w1.png)
 
 ## Dodatkowe linie
 

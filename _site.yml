@@ -11,9 +11,19 @@ navbar:
           href: sprawyorganizacyjne.html
         - text: "Bazowa grafika"
           href: bazowagrafika.html
-    - text: "Propozycje"
-      href: propozycje.html
+    - text: "Dzień 2"
+      menu:
+        - text: "Teoria"
+          href: teoria.html
+        - text: "Ćwiczenia 1"
+          href: cwiczenia1.html
+        - text: "Bazowa grafika - cd."
+          href: bazowagrafikacd.html
+        - text: "Ćwiczenia 2"
+          href: cwiczenia2.html
     - text: "Przykłady"
       href: przyklady.html
+    - text: "Pomocne pluginy"
+      href: pomocnepluginy.html
 
 

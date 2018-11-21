@@ -302,11 +302,32 @@ div.tocify {
     </li>
   </ul>
 </li>
-<li>
-  <a href="propozycje.html">Propozycje</a>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Dzień 2
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="teoria.html">Teoria</a>
+    </li>
+    <li>
+      <a href="cwiczenia1.html">Ćwiczenia 1</a>
+    </li>
+    <li>
+      <a href="bazowagrafikacd.html">Bazowa grafika - cd.</a>
+    </li>
+    <li>
+      <a href="cwiczenia2.html">Ćwiczenia 2</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="przyklady.html">Przykłady</a>
+</li>
+<li>
+  <a href="pomocnepluginy.html">Pomocne pluginy</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -339,9 +360,9 @@ div.tocify {
 }
 
 </style>
-<p><a href="bazowagrafika.pdf">Wersja pdf</a></p>
 <div id="bazowa-grafika" class="section level1">
 <h1>Bazowa grafika</h1>
+<p><a href="bazowagrafika.pdf">Wersja pdf</a></p>
 <div id="wykres---plot" class="section level2">
 <h2>Wykres - plot</h2>
 <p>Funkcja <code>plot</code> w podstawowej wersji służy do generowania/rysowania wykresów.</p>
@@ -368,7 +389,7 @@ plot(x, sin(x))</code></pre>
 <p>Przykład użycia różnych parametrów:</p>
 <pre class="r"><code>plot(x, sin(x), main=&quot;Wykres sinus- tytuł&quot;,sub=&quot;a tu jakiś podtytuł&quot;,xlab=&quot;tu mamy x&quot;,ylab=&quot;tu mamy sinus&quot;,type=&quot;l&quot;,col=&quot;blue&quot;)</code></pre>
 <p><img src="bazowagrafika_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
-<p>Lista wbudowanych kolorów to funkcja <code>colors()</code>. Użycie kolorów w systemie hex możliwe jest poprzez <code>#AA4371</code>. Jeśli mamy wartość rgp, możemy ją zmienić na poprzez polecenie <code>rgb</code>.</p>
+<p>Lista wbudowanych kolorów to funkcja <code>colors()</code>. Użycie kolorów w systemie hex możliwe jest poprzez <code>#AA4371</code>. Jeśli mamy wartość rgb, możemy ją zmienić na poprzez polecenie <code>rgb</code>.</p>
 <pre class="r"><code>plot(x, sin(x), col=&quot;#AA4371&quot;)</code></pre>
 <p><img src="bazowagrafika_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <pre class="r"><code>plot(x, sin(x), col=rgb(34,22,25,max=255))</code></pre>
@@ -420,8 +441,8 @@ box()</code></pre>
 <li>Spróbuj odwzorować w kodzie poniższy wykres.</li>
 </ol>
 <div class="figure">
-<img src="w1.png" alt="w1" />
-<p class="caption">w1</p>
+<img src="w1.png" />
+
 </div>
 </div>
 </div>

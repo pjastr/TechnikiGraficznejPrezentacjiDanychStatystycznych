@@ -28,9 +28,11 @@ output:
 
 </style>
 
-[Wersja pdf](sprawyorganizacyjne.pdf)
+
 
 # Sprawy organizacyjne
+
+[Wersja pdf](sprawyorganizacyjne.pdf)
 
 * Sylabus dostępny na stronie studiów podyplomowych WMII - [link](http://wmii.uwm.edu.pl/psi/sites/default/files/styles/03_techniki_graficznej_prezentacji_danych.pdf)
 * Liczba godzin: 8 godz. (ćwiczenia).
