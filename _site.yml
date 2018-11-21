@@ -13,5 +13,7 @@ navbar:
           href: bazowagrafika.html
     - text: "Propozycje"
       href: propozycje.html
+    - text: "Przykłady"
+      href: przyklady.html
 
 

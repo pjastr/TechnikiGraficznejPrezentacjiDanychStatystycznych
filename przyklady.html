@@ -11,7 +11,7 @@
 
 
 
-<title>Propozycje</title>
+<title>Przykłady wykresów</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -320,7 +320,7 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Propozycje</h1>
+<h1 class="title toc-ignore">Przykłady wykresów</h1>
 
 </div>
 
@@ -339,12 +339,31 @@ div.tocify {
 }
 
 </style>
-<div id="propozycje" class="section level1">
-<h1>Propozycje</h1>
-<p>Jeśli mają Państwo sugestie, propozycje co do tematyki rodzajów wykresów, rapotów czy innych graficznych obiektów, które powinny pojawić się na zajęciach, proszę o wypełnienie formularza.</p>
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScwDnjrpTRlYpLnmNMTH1by6dW8JA7FrQHc8TSVgiH4eHUO0Q/viewform?embedded=true" width="640" height="510" frameborder="0" marginheight="0" marginwidth="0">
-Ładuję…
-</iframe>
+<p><a href="przyklady.pdf">Wersja pdf</a></p>
+<div id="przykady-wykresow" class="section level1">
+<h1>Przykłady wykresów</h1>
+<div id="przykad-1" class="section level2">
+<h2>Przykład 1</h2>
+<p>Komentarz: pierwszy parametr <code>axis</code> określa położenie osi: 1- dół, 2- lewa strona, 3 - góra, 4 - prawa strona.</p>
+<pre class="r"><code>a&lt;-c(1,2,3,4,5,6,7)
+b&lt;-c(23,3,2,4,5,2,-2)
+plot(a,b,axes=FALSE,type=&quot;o&quot;,col=&quot;blue&quot;,ann=FALSE)
+axis(4, las=1, at=10*0:range(b)[2])
+axis(3, at=1:7, lab=c(&quot;Pn&quot;,&quot;Wt&quot;,&quot;Śr&quot;,&quot;Czw&quot;,&quot;Pt&quot;,&quot;So&quot;,&quot;Nd&quot;))
+box()</code></pre>
+<p><img src="przyklady_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+</div>
+<div id="przykad-2" class="section level2">
+<h2>Przykład 2</h2>
+<p>Jeśli w parametrze <code>at</code> chcemy mieć kontrolę nad tym co będzie, możemy dodać tam ręcznie konkretny wektor.</p>
+<pre class="r"><code>a&lt;-c(1,2,3,4,5,6,7)
+b&lt;-c(23,3,2,4,5,2,-2)
+plot(a,b,axes=FALSE,type=&quot;o&quot;,col=&quot;blue&quot;,ann=FALSE)
+axis(2, las=1, at=c(0,5,17,20,23))
+axis(1, at=1:7, lab=c(&quot;Pn&quot;,&quot;Wt&quot;,&quot;Śr&quot;,&quot;Czw&quot;,&quot;Pt&quot;,&quot;So&quot;,&quot;Nd&quot;))
+box()</code></pre>
+<p><img src="przyklady_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+</div>
 </div>
 </div>
 
