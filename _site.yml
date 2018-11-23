@@ -17,6 +17,8 @@ navbar:
           href: teoria.html
         - text: "Ćwiczenia 1"
           href: cwiczenia1.html
+        - text: "Paremetry strony"
+          href: parametrystrony.html
         - text: "Bazowa grafika - cd."
           href: bazowagrafikacd.html
         - text: "Ćwiczenia 2"

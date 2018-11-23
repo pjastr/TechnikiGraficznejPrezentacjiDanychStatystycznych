@@ -1,0 +1,131 @@
+---
+title: "Dzień 2 - Teoria"
+header-includes:
+  - \usepackage[polish]{babel}
+output:
+  html_document:
+    toc: true
+    toc_depth: 5
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+  pdf_document:
+    toc: yes
+    toc_depth: '5'
+---
+<style type="text/css">
+.title {
+  display: none;
+}
+
+.table {
+    width:70%;
+}
+
+#getting-started img {
+  margin-right: 10px;
+}
+
+</style>
+
+
+
+# Teoria
+
+[Wersja pdf](teoria.pdf)
+
+## Metody preznentacji danych statystycznych
+
+* forma tabelaryczna - przestawienie danych w tabelach lub tabelach statystycznych (szeregi rozdzielcze).
+* forma graficzna - przedstawienie danych w formie wykresów.
+* forma opisowa - przedstawienie danych w formie tekstu.
+
+## Techniki prezentacji danych jednowymiarowych i wielowymiarowych
+
+### Wykres punktowy
+
+```{r echo=FALSE}
+wzrost <- c(145, 167, 178, 124, 150)
+waga <- c(51, 68, 64, 43, 57)
+plot(wzrost,waga, col=rainbow(5))
+```
+
+### Wykres liniowy
+
+```{r echo=FALSE}
+wzrost <- c(124, 145, 150, 167, 178)
+waga <- c(43, 51, 57, 68, 64)
+
+plot(wzrost,waga,type = "l")
+```
+
+### Wykres kołowy (ciastkowy)
+
+```{r echo = FALSE}
+urlopy<- c(23,3,4,15,8)
+pie(urlopy, main="urlopy", col=rainbow(length(urlopy)),
+   labels=c("A","B","C","D","E"))
+```
+
+### Wykres słupkowy (paskowy)
+
+```{r echo = FALSE}
+library (MASS)
+school.freq=table(painters$School)
+barplot(school.freq, col=heat.colors(nrow(school.freq)))
+```
+
+
+```{r echo=FALSE}
+urlopy<- matrix( c(2, 4, 8, 1,4, 5, 7,11,3,24,12,9), nrow=3, ncol=4)
+barplot(urlopy, main="Urlopy", ylab= "Razem",
+   beside=TRUE, col=rainbow(5))
+
+```
+
+```{r echo=FALSE}
+barplot(t(urlopy), main="Urlopy", ylab="Razem", 
+   col=heat.colors(3), space=0.1, cex.axis=0.8, las=1,
+   names.arg=c("A","B","C"), cex=0.8)
+```
+
+
+### Wykres mozaikowy (kafelkowy)
+
+```{r echo = FALSE}
+choroby<-matrix(c(34,12,22,18),ncol=2,byrow=TRUE)
+colnames(choroby) <- c("M","K")
+rownames(choroby)<- c("GDO", "DDO")
+mosaicplot(choroby, color = rainbow(2))
+```
+
+### Histogram 
+
+```{r echo=FALSE}
+erupcje<- faithful$eruptions
+hist(erupcje)
+```
+
+### Wykresy mapowe
+
+```{r echo=FALSE}
+library(sp)
+gadm <- readRDS("gadm36_POL_1_sp.rds")
+myColours <- rep("forestgreen", 16)
+myColours[5] <- "red"
+plot(gadm, col = myColours, border = 'grey')
+```
+
+### Pary wykresów
+
+```{r echo=FALSE}
+pairs(iris)
+```
+
+
+## Jak nie tworzyć wykresów?
+
+Rankingi na smarterpoland.pl - [link](http://smarterpoland.pl/index.php/2017/12/najgorszy-wykres-2017-roku/)
+
+</div>
+

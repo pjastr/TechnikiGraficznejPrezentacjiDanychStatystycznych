@@ -68,6 +68,7 @@ output:
 * P. Biecek, Przewodnik po pakiecie R, Oficyna Wydawnicza GiS, 2017.
 * https://rstudio-pubs-static.s3.amazonaws.com/7953_4e3efd5b9415444ca065b1167862c349.html
 * https://www.harding.edu/fmccown/r/
+* http://www.melissaclarkson.com/resources/R_guides/documents/figure_layout_Ver1.pdf
 
 
 
