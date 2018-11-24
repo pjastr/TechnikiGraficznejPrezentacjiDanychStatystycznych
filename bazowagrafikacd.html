@@ -487,7 +487,55 @@ lines(density(x), xlab=&quot;&quot;, ylab=&quot;&quot;, main=&quot;&quot;)</code
 <pre class="r"><code>hist(AirPassengers, main=&quot;Pasażerowie linii lotniczych&quot;, xlab=&quot;Pasażerowie&quot;, 
      border=&quot;blue&quot;, col=&quot;red&quot;, xlim=c(100,700), las=1, 
      breaks=c(100,300,500,700))</code></pre>
-<img src="bazowagrafikacd_files/figure-html/unnamed-chunk-19-1.png" width="672" />
+<p><img src="bazowagrafikacd_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+</div>
+<div id="wykres-pudekowy---boxplot" class="section level2">
+<h2>Wykres pudełkowy - <code>boxplot</code></h2>
+<pre class="r"><code>x&lt;-c(3,4,5,6,7,8,1,2,3,14)
+boxplot(x)</code></pre>
+<p><img src="bazowagrafikacd_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p>Przy dwóch zmiennych możemy użyć poniższej składni:</p>
+<pre class="r"><code>boxplot(mpg~cyl,data=mtcars, main=&quot;Dane o samochodach&quot;, 
+    xlab=&quot;Liczba cylindrów&quot;, ylab=&quot;Mile na galon&quot;)</code></pre>
+<p><img src="bazowagrafikacd_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p>Parametr <code>horizontal=TRUE</code> zmienia orientację na poziomą. <code>notch</code>- dodaje “zwężenie”.</p>
+<pre class="r"><code>x&lt;-c(3,4,5,6,7,3,5,6,7,3,1,2,10,3,20)
+boxplot(x, horizontal = TRUE, notch=TRUE)</code></pre>
+<p><img src="bazowagrafikacd_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+</div>
+<div id="mapy-ciepa" class="section level2">
+<h2>Mapy ciepła</h2>
+<pre class="r"><code>data=as.matrix(mtcars)
+heatmap(data)</code></pre>
+<p><img src="bazowagrafikacd_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<pre class="r"><code>heatmap(data, scale=&quot;column&quot;)</code></pre>
+<p><img src="bazowagrafikacd_files/figure-html/unnamed-chunk-23-2.png" width="672" /></p>
+<pre class="r"><code>heatmap(data, Colv = NA, Rowv = NA, scale=&quot;column&quot;)</code></pre>
+<p><img src="bazowagrafikacd_files/figure-html/unnamed-chunk-23-3.png" width="672" /></p>
+</div>
+<div id="baza-iris" class="section level2">
+<h2>Baza <code>iris</code></h2>
+<pre class="r"><code>data(iris)
+head(iris)</code></pre>
+<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa</code></pre>
+<pre class="r"><code>plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species)</code></pre>
+<p><img src="bazowagrafikacd_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<pre class="r"><code>plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species, pch = 16)</code></pre>
+<p><img src="bazowagrafikacd_files/figure-html/unnamed-chunk-24-2.png" width="672" /></p>
+<pre class="r"><code>plot(iris$Sepal.Length, iris$Petal.Length,
+     col = iris$Species,
+     pch = 16,
+     cex = 2)
+legend(x = 4.5, y = 7, legend = levels(iris$Species), col = c(1:3), pch = 16)</code></pre>
+<p><img src="bazowagrafikacd_files/figure-html/unnamed-chunk-24-3.png" width="672" /></p>
+<pre class="r"><code>pairs(iris)</code></pre>
+<img src="bazowagrafikacd_files/figure-html/unnamed-chunk-24-4.png" width="672" />
 </div>
 </div>
 </div>

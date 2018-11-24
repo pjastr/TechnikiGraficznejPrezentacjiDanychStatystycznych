@@ -352,5 +352,54 @@ hist(AirPassengers, main="Pasażerowie linii lotniczych", xlab="Pasażerowie",
      border="blue", col="red", xlim=c(100,700), las=1, 
      breaks=c(100,300,500,700))
 ```
+
+##Wykres pudełkowy - `boxplot`
+
+```{r}
+x<-c(3,4,5,6,7,8,1,2,3,14)
+boxplot(x)
+```
+
+Przy dwóch zmiennych możemy użyć poniższej składni:
+
+```{r}
+boxplot(mpg~cyl,data=mtcars, main="Dane o samochodach", 
+  	xlab="Liczba cylindrów", ylab="Mile na galon")
+```
+
+Parametr `horizontal=TRUE` zmienia orientację na poziomą. `notch`- dodaje "zwężenie". 
+```{r}
+x<-c(3,4,5,6,7,3,5,6,7,3,1,2,10,3,20)
+boxplot(x, horizontal = TRUE, notch=TRUE)
+```
+
+##Mapy ciepła
+
+
+```{r}
+data=as.matrix(mtcars)
+heatmap(data)
+heatmap(data, scale="column")
+heatmap(data, Colv = NA, Rowv = NA, scale="column")
+```
+
+## Baza `iris`
+
+```{r}
+data(iris)
+head(iris)
+plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species)
+plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species, pch = 16)
+plot(iris$Sepal.Length, iris$Petal.Length,
+     col = iris$Species,
+     pch = 16,
+     cex = 2)
+legend(x = 4.5, y = 7, legend = levels(iris$Species), col = c(1:3), pch = 16)
+pairs(iris)
+```
 </div>
+
+
+
+
 

@@ -106,6 +106,13 @@ erupcje<- faithful$eruptions
 hist(erupcje)
 ```
 
+### Wykres pudełkowy
+
+```{r echo=FALSE}
+boxplot(mpg~cyl,data=mtcars, main="Dane o samochodach", 
+  	xlab="Liczba cylindrów", ylab="Mile na galon")
+```
+
 ### Wykresy mapowe
 
 ```{r echo=FALSE}
