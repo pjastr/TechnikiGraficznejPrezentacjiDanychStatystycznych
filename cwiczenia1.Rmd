@@ -1,0 +1,63 @@
+---
+title: "Dzień 2 - Ćwiczenia 1"
+header-includes:
+  - \usepackage[polish]{babel}
+output:
+  html_document:
+    toc: true
+    toc_depth: 5
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+  pdf_document:
+    toc: yes
+    toc_depth: '5'
+---
+<style type="text/css">
+.title {
+  display: none;
+}
+
+.table {
+    width:70%;
+}
+
+#getting-started img {
+  margin-right: 10px;
+}
+
+</style>
+
+
+
+# Ćwiczenia 1
+
+[Wersja pdf](cwiczenia1.pdf)
+
+1. Wykonaj poniższe czynności:
+* narysuj wykres funkcji $y=\frac{5x+\sin(x)}{x}$ na przedziale $[0,30]$.
+* zmniejsz przedział do przedziału $[2,30]$.
+* przemyśl jaki warto ustalić zakres dla osi y
+* dodaj tytuł i podtytuł do wykresu
+* dodaj asymptotę do wykresu (innymi słowy dorysuj prostą $y=5$ linią przerywaną).
+* zmień orientację liczb na osi y
+* dodaj legendę
+* dodaj tekst do wykresu
+
+2. Wprowadź poniższy kod:
+
+```{r}
+library(MASS)
+baza<-survey
+head(baza)
+```
+
+Stwórz co najmniej dwa wykresy do wybranych kolumn. 
+Opis bazy jest dostępny tutaj - [link](https://www.rdocumentation.org/packages/MASS/versions/7.3-51.1/topics/survey).
+
+
+
+
+
+</div>
+

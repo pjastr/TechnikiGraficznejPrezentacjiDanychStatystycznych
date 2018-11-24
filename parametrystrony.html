@@ -666,6 +666,30 @@ barplot(wybory, col=rainbow(3), axes=FALSE)</code></pre>
 <pre class="r"><code>dev.off</code></pre>
 </div>
 </div>
+<div id="zapisywanie-wykresow" class="section level1">
+<h1>Zapisywanie wykresów</h1>
+<p>Pierwszą opcją jest zapisanie za pomocą graficznego interfejsu środowiska RStudio.</p>
+<div class="figure">
+<img src="export.jpg" alt="Eksport" />
+<p class="caption">Eksport</p>
+</div>
+<p>Objaśnienienie rozszerzeń plików:</p>
+<ul>
+<li>png - rastrowy format plików graficznych oraz system bezstratnej kompresji danych graficznych</li>
+<li>jpg - rastrowy format plików graficznych oraz system stratnej kompresji danych graficznych</li>
+<li>tiff - przechowuje informacje o kanałach alfa, ścieżkach, profilu kolorów, komentarzach, umożliwia także zapisywanie dokumentów wielostronicowych</li>
+<li>bmp - wolny od patentów jest dostępny (zwykle bez kompresji)</li>
+<li>metafile - format pliku grafiki wektorowej 2D, grafiki rastrowej i tekstu.</li>
+<li>svg - uniwersalny format dwuwymiarowej grafiki wektorowej (statycznej i animowanej), nieobwarowany licencjami i patentami</li>
+<li>eps - format plików, będący podzbiorem języka PostScript, służący do przechowywania pojedynczych stron grafiki wektorowej w postaci umożliwiającej osadzanie ich w innych dokumentach</li>
+</ul>
+<div id="zapisywanie-za-pomoca-kodu" class="section level2">
+<h2>Zapisywanie za pomocą kodu</h2>
+<pre class="r"><code>png(&#39;filename.png&#39;)
+# make plot
+dev.off()</code></pre>
+</div>
+</div>
 </div>
 
 

@@ -23,8 +23,6 @@ navbar:
           href: bazowagrafikacd.html
         - text: "Ćwiczenia 2"
           href: cwiczenia2.html
-    - text: "Przykłady"
-      href: przyklady.html
     - text: "Pomocne pluginy"
       href: pomocnepluginy.html
 
