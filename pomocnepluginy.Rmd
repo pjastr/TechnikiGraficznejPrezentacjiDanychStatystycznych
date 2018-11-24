@@ -1,0 +1,57 @@
+---
+title: "Pomocne pluginy"
+header-includes:
+  - \usepackage[polish]{babel}
+output:
+  html_document:
+    toc: true
+    toc_depth: 5
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+  pdf_document:
+    toc: yes
+    toc_depth: '5'
+---
+<style type="text/css">
+.title {
+  display: none;
+}
+
+.table {
+    width:70%;
+}
+
+#getting-started img {
+  margin-right: 10px;
+}
+
+</style>
+
+
+
+# Pomocne pluginy
+
+[Wersja pdf](pomocnepluginy.pdf)
+
+## ggplot2
+
+* https://www.statmethods.net/advgraphs/ggplot2.html
+* https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf
+
+## ggvis
+
+* http://ggvis.rstudio.com/
+
+## rgl
+
+* http://rgl.neoscientists.org/about.shtml
+
+## Do map - GADMTools (ale ma błędy z wersjami R)
+
+* https://cran.r-project.org/web/packages/GADMTools/vignettes/Using_GADMTools.pdf
+
+
+
+</div>
+

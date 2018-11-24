@@ -55,6 +55,8 @@ head(baza)
 Stwórz co najmniej dwa wykresy do wybranych kolumn. 
 Opis bazy jest dostępny tutaj - [link](https://www.rdocumentation.org/packages/MASS/versions/7.3-51.1/topics/survey).
 
+Zrób oddzielny wykres pobierający dane tylko osób leworęcznych.
+Wskazówka: `l<-survey[survey$W.Hnd=="Left",]`.
 
 
 

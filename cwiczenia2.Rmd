@@ -1,0 +1,49 @@
+---
+title: "Dzień 2 - Ćwiczenia 2"
+header-includes:
+  - \usepackage[polish]{babel}
+output:
+  html_document:
+    toc: true
+    toc_depth: 5
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+  pdf_document:
+    toc: yes
+    toc_depth: '5'
+---
+<style type="text/css">
+.title {
+  display: none;
+}
+
+.table {
+    width:70%;
+}
+
+#getting-started img {
+  margin-right: 10px;
+}
+
+</style>
+
+
+
+# Ćwiczenia 2
+
+[Wersja pdf](cwiczenia2.pdf)
+
+
+Narysuj wykresy dla poniższych baz danych (mogą wymagać pakietu `MASS`):
+```
+Animals
+Boston
+petrol
+caith 
+hills
+```
+
+
+</div>
+

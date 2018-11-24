@@ -69,6 +69,7 @@ output:
 * https://rstudio-pubs-static.s3.amazonaws.com/7953_4e3efd5b9415444ca065b1167862c349.html
 * https://www.harding.edu/fmccown/r/
 * http://www.melissaclarkson.com/resources/R_guides/documents/figure_layout_Ver1.pdf
+* http://www.sthda.com/english/wiki/add-legends-to-plots-in-r-software-the-easiest-way
 
 
 
