@@ -47,7 +47,9 @@ output:
 
 * http://rgl.neoscientists.org/about.shtml
 
-## Do map - GADMTools (ale ma błędy z wersjami R)
+## Do map - GADMTools 
+
+(ale ma błędy z wersjami R)
 
 * https://cran.r-project.org/web/packages/GADMTools/vignettes/Using_GADMTools.pdf
 

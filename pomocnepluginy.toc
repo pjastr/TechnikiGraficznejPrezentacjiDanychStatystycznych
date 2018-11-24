@@ -3,4 +3,4 @@
 \contentsline {subsection}{ggplot2}{1}{section*.3}
 \contentsline {subsection}{ggvis}{1}{section*.4}
 \contentsline {subsection}{rgl}{1}{section*.5}
-\contentsline {subsection}{Do map - GADMTools (ale ma b\IeC {\l }\IeC {\k e}dy z wersjami R)}{1}{section*.6}
+\contentsline {subsection}{Do map - GADMTools}{1}{section*.6}
