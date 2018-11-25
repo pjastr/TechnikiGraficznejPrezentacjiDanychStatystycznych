@@ -506,6 +506,22 @@ map1<- getData('GADM', country='POL', level=2)
 map2 <- map1[map1$NAME_1=="Warmińsko-Mazurskie",]
 plot(map2)
 ```
+
+## Strzałki i wykresy z błędami
+
+Arrows - link do dokumentacji - [link](https://www.rdocumentation.org/packages/graphics/versions/3.5.1/topics/arrows).
+
+```{r}
+plot(mpg~disp,data=mtcars)
+arrows(x0=mtcars$disp,
+       y0=mtcars$mpg*0.95,
+       x1=mtcars$disp,
+       y1=mtcars$mpg*1.05,
+       angle=90,
+       code=3,
+       length=0.04,
+       lwd=0.4)
+```
 </div>
 
 

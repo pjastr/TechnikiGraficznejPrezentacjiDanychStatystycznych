@@ -316,7 +316,7 @@ div.tocify {
       <a href="cwiczenia1.html">Ćwiczenia 1</a>
     </li>
     <li>
-      <a href="parametrystrony.html">Paremetry strony</a>
+      <a href="parametrystrony.html">Parametry strony</a>
     </li>
     <li>
       <a href="bazowagrafikacd.html">Bazowa grafika - cd.</a>
@@ -635,7 +635,21 @@ persp(x, y, z)</code></pre>
 map1&lt;- getData(&#39;GADM&#39;, country=&#39;POL&#39;, level=2)
 map2 &lt;- map1[map1$NAME_1==&quot;Warmińsko-Mazurskie&quot;,]
 plot(map2)</code></pre>
-<img src="bazowagrafikacd_files/figure-html/unnamed-chunk-36-1.png" width="672" />
+<p><img src="bazowagrafikacd_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
+</div>
+<div id="strzaki-i-wykresy-z-bedami" class="section level2">
+<h2>Strzałki i wykresy z błędami</h2>
+<p>Arrows - link do dokumentacji - <a href="https://www.rdocumentation.org/packages/graphics/versions/3.5.1/topics/arrows">link</a>.</p>
+<pre class="r"><code>plot(mpg~disp,data=mtcars)
+arrows(x0=mtcars$disp,
+       y0=mtcars$mpg*0.95,
+       x1=mtcars$disp,
+       y1=mtcars$mpg*1.05,
+       angle=90,
+       code=3,
+       length=0.04,
+       lwd=0.4)</code></pre>
+<img src="bazowagrafikacd_files/figure-html/unnamed-chunk-37-1.png" width="672" />
 </div>
 </div>
 </div>
