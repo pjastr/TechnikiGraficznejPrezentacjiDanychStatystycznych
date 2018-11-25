@@ -649,7 +649,17 @@ arrows(x0=mtcars$disp,
        code=3,
        length=0.04,
        lwd=0.4)</code></pre>
-<img src="bazowagrafikacd_files/figure-html/unnamed-chunk-37-1.png" width="672" />
+<p><img src="bazowagrafikacd_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
+<pre class="r"><code>a&lt;-c(3,4.5,5)
+b&lt;-c(0.1,0.2,0.3)
+x&lt;-data.frame(a,b)
+colnames(x)&lt;-c(&quot;pomiar&quot;,&quot;blad&quot;)
+plot(x$pomiar, pch=19, ylim=c(2.5,5.5))
+     
+arrows( 1:dim(x)[1],x$pomiar-x$blad,1:dim(x)[1], x$pomiar+x$blad,
+       angle=90, code=3,
+       length=0.04)</code></pre>
+<img src="bazowagrafikacd_files/figure-html/unnamed-chunk-38-1.png" width="672" />
 </div>
 </div>
 </div>
