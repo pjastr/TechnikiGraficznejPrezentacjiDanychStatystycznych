@@ -523,7 +523,7 @@ legend(&quot;bottomleft&quot;, inset=.02, title=&quot;Number of Cylinders&quot;,
 hist(x, prob = TRUE)
 lines(density(x), xlab=&quot;&quot;, ylab=&quot;&quot;, main=&quot;&quot;)</code></pre>
 <p><img src="bazowagrafikacd_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
-<p><code>breaks</code> określa punkty podziałów. Może być liczbą.</p>
+<p><code>breaks</code> określa punkty podziałów. Może być liczbą (ale zaokrąglenie do “piątek”).</p>
 <pre class="r"><code>hist(AirPassengers, main=&quot;Pasażerowie linii lotniczych&quot;, xlab=&quot;Pasażerowie&quot;, 
      border=&quot;blue&quot;, col=&quot;red&quot;, xlim=c(100,700), las=1, 
      breaks=9)</code></pre>
