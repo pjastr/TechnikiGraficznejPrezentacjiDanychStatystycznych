@@ -638,10 +638,8 @@ hist(mtcars$mpg)
 hist(mtcars$disp)</code></pre>
 <p><img src="parametrystrony_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <p>Nakładanie obrazów na siebie:</p>
-<pre class="r"><code>par(fig=c(0,0.8,0,0.8), new=TRUE)</code></pre>
-<pre><code>## Warning in par(fig = c(0, 0.8, 0, 0.8), new = TRUE): wywołanie
-## &#39;par(new=TRUE)&#39; bez wykresu</code></pre>
-<pre class="r"><code>plot(mtcars$wt, mtcars$mpg, xlab=&quot;Car Weight&quot;,
+<pre class="r"><code>par(fig=c(0,0.8,0,0.8))
+plot(mtcars$wt, mtcars$mpg, xlab=&quot;Car Weight&quot;,
   ylab=&quot;Miles Per Gallon&quot;)
 par(fig=c(0,0.8,0.55,1), new=TRUE)
 boxplot(mtcars$wt, horizontal=TRUE, axes=FALSE)
@@ -676,7 +674,7 @@ barplot(wybory, col=rainbow(3), axes=FALSE)</code></pre>
 <li>jpg - rastrowy format plików graficznych oraz system stratnej kompresji danych graficznych</li>
 <li>tiff - przechowuje informacje o kanałach alfa, ścieżkach, profilu kolorów, komentarzach, umożliwia także zapisywanie dokumentów wielostronicowych</li>
 <li>bmp - wolny od patentów jest dostępny (zwykle bez kompresji)</li>
-<li>metafile - format pliku grafiki wektorowej 2D, grafiki rastrowej i tekstu.</li>
+<li>metafile (emf) - format pliku grafiki wektorowej 2D, grafiki rastrowej i tekstu (głównie dla Windowsa).</li>
 <li>svg - uniwersalny format dwuwymiarowej grafiki wektorowej (statycznej i animowanej), nieobwarowany licencjami i patentami</li>
 <li>eps - format plików, będący podzbiorem języka PostScript, służący do przechowywania pojedynczych stron grafiki wektorowej w postaci umożliwiającej osadzanie ich w innych dokumentach</li>
 </ul>

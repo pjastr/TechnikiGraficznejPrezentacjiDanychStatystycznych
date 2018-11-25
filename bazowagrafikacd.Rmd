@@ -396,7 +396,7 @@ hist(x, prob = TRUE)
 lines(density(x), xlab="", ylab="", main="")
 ```
 
-`breaks` określa punkty podziałów. Może być liczbą.
+`breaks` określa punkty podziałów. Może być liczbą (ale zaokrąglenie do "piątek").
 ```{r}
 hist(AirPassengers, main="Pasażerowie linii lotniczych", xlab="Pasażerowie", 
      border="blue", col="red", xlim=c(100,700), las=1, 

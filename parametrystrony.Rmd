@@ -328,7 +328,7 @@ hist(mtcars$disp)
 
 Nakładanie obrazów na siebie:
 ```{r}
-par(fig=c(0,0.8,0,0.8), new=TRUE)
+par(fig=c(0,0.8,0,0.8))
 plot(mtcars$wt, mtcars$mpg, xlab="Car Weight",
   ylab="Miles Per Gallon")
 par(fig=c(0,0.8,0.55,1), new=TRUE)
@@ -367,7 +367,7 @@ Objaśnienienie rozszerzeń plików:
 * jpg - rastrowy format plików graficznych oraz system stratnej kompresji danych graficznych
 * tiff - przechowuje informacje o kanałach alfa, ścieżkach, profilu kolorów, komentarzach, umożliwia także zapisywanie dokumentów wielostronicowych
 * bmp - wolny od patentów jest dostępny (zwykle bez kompresji)
-* metafile - format pliku grafiki wektorowej 2D, grafiki rastrowej i tekstu.
+* metafile (emf) - format pliku grafiki wektorowej 2D, grafiki rastrowej i tekstu (głównie dla Windowsa).
 * svg - uniwersalny format dwuwymiarowej grafiki wektorowej (statycznej i animowanej), nieobwarowany licencjami i patentami
 * eps - format plików, będący podzbiorem języka PostScript, służący do przechowywania pojedynczych stron grafiki wektorowej w postaci umożliwiającej osadzanie ich w innych dokumentach
 
