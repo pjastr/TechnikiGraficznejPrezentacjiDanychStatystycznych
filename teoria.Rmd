@@ -34,7 +34,7 @@ output:
 
 [Wersja pdf](teoria.pdf)
 
-## Metody preznentacji danych statystycznych
+## Metody prezentacji danych statystycznych
 
 * forma tabelaryczna - przestawienie danych w tabelach lub tabelach statystycznych (szeregi rozdzielcze).
 * forma graficzna - przedstawienie danych w formie wykresów.

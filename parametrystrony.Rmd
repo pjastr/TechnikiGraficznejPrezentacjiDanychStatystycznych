@@ -375,7 +375,7 @@ Objaśnienienie rozszerzeń plików:
 
 ```{r results='hide'}
 png('filename.png')
-# make plot
+# kod wykresu
 dev.off()
 ```
 </div>
